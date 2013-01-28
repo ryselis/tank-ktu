@@ -1340,7 +1340,20 @@ function startMoving(move_id,speed){
     if(movement_interval_id != -1){
         clearInterval(movement_interval_id);
     }
-    move(move_id,speed);    
+    src="http://192.168.42.202/move/255";
+                        new Ajax.Request(src, {
+                            method: 'get',
+                            onSuccess: function(transport) {
+                               /* var response = transport.responseText || "no response text";
+                                $("fotoimage").setStyle({display: 'block'});
+                                $("fotoimage").setAttribute('src',src);
+                                hideImage.delay(5);
+                                savingFoto = false;*/
+                            },
+                            onFailure: function() { alert('Something went wrong...'); }
+                        });
+    
+    //move(move_id,speed);    
     movement_interval_id = setInterval("move('" + move_id + "', " + speed + ")",MOVEMENT_INTERVAL);
 }
 function move(move_id,speed){
