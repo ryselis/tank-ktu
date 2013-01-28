@@ -126,13 +126,34 @@
 	top: 21px;
 }
 
-#controller {
-	width: 250px;
-	height: 250px;
+#tank_body {
+	width: 149px;
+	height: 304px;
 	position:absolute;
-	bottom: 60px;
-	right: 30px;
-    background: url(../../images/controller_bg.png) no-repeat;
+	bottom: 50px;
+	right: 50px;
+    background: url(../../PNGs/Body.png) no-repeat;
+    z-index: 0;
+}
+
+#turret {
+    width: 104px;
+    height: 220px;
+    position: absolute;
+    bottom: 175px;
+    right: 25px;
+    background: url(../../PNGs/Turret.png) no-repeat;
+    z-index: 1;
+}
+
+#shoot_missile {
+    width: 23px;
+    height: 24px;
+    position: absolute;
+    bottom: 120px;
+    right: 80px;
+    background: url(../../PNGs/Shoot.png) no-repeat;
+    z-index: 2;
 }
 
 #forward {

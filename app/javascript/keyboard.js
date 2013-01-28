@@ -168,14 +168,14 @@ $(document).observe('keydown', function (e) {
             			break;
             		
             	}
-            	if (is_hotkey){
+            	/*if (is_hotkey){
             		if (is_rotkey){
             			setButtonDown2(button_name, image_part_url, 0, 62)
             		}
             		else{
             			$(button_name).setStyle({background: 'url(images/'+image_url_part+'.png) '+xpoz+'px '+ypoz+'px'});
             		}
-            	}
+            	}*/
             }
            
             
@@ -294,13 +294,13 @@ function setButtonDown(button, direction, xpos, ypos) {
 
 		function setAllButtonsUp(button1, direction1, button2, direction2, button3, direction3, button4, direction4, 
 				button5, direction5, button6, direction6) {
-			$(button1).setStyle({background: 'url(images/'+direction1+'.png)'});
+			/*$(button1).setStyle({background: 'url(images/'+direction1+'.png)'});
 			$(button2).setStyle({background: 'url(images/'+direction2+'.png)'});
 			$(button3).setStyle({background: 'url(images/'+direction3+'.png)'});
 			$(button4).setStyle({background: 'url(images/'+direction4+'.png)'});
 			setButtonUp2(button5, direction5);
 			setButtonUp2(button6, direction6);
 			stopMoving();
-			logAction('end 2');
+			logAction('end 2');*/
 			
 		}
