@@ -1344,11 +1344,11 @@ function startMoving(move_id,speed){
                         new Ajax.Request(src, {
                             method: 'get',
                             onSuccess: function(transport) {
-                               /* var response = transport.responseText || "no response text";
+                               var response = transport.responseText || "no response text";
                                 $("fotoimage").setStyle({display: 'block'});
                                 $("fotoimage").setAttribute('src',src);
                                 hideImage.delay(5);
-                                savingFoto = false;*/
+                                savingFoto = false;
                             },
                             onFailure: function() { alert('Something went wrong...'); }
                         });
