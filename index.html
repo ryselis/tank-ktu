@@ -115,6 +115,18 @@
                             },
                             onFailure: function() { alert('Something went wrong...'); }
                         });
+                        src="http://192.168.42.202/tank/off";
+                        new Ajax.Request(src, {
+                            method: 'get',
+                            onSuccess: function(transport) {
+                               /* var response = transport.responseText || "no response text";
+                                $("fotoimage").setStyle({display: 'block'});
+                                $("fotoimage").setAttribute('src',src);
+                                hideImage.delay(5);
+                                savingFoto = false;*/
+                            },
+                            onFailure: function() { alert('Something went wrong...'); }
+                        });
     
 						}
 						if(v==0.1){ accelerometer_on=false; setAllButtonsUp('forward', 'forward', 'strifeleft', 'left', 'striferight', 'right', 'backward', 'backward', 'rotate_left', 'left', 'rotate_right', 'right');}
