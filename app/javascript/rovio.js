@@ -1340,7 +1340,7 @@ function startMoving(move_id,speed){
     if(movement_interval_id != -1){
         clearInterval(movement_interval_id);
     }
-    src="http://192.168.42.202/move/255";
+    src="http://192.168.42.202/move/0";
                         new Ajax.Request(src, {
                             method: 'get',
                             onSuccess: function(transport) {
