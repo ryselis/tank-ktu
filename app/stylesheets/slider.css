@@ -1,0 +1,211 @@
+#slider, #slider-bar, #slider-handle {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#slider {
+    width: 42px;
+    height:300px;
+/*    background: url(../../images/bg_v.png) no-repeat 0 -300px; */
+	position:absolute;
+	bottom:30px;
+	left: 30px;
+}
+
+#slider-bar {
+    width:42px;
+    height:300px;
+    background: url(../../images/track_v2.png) no-repeat;
+}
+
+#slider-handle {
+    width:42px;
+    height:42px;
+    cursor:ns-resize;
+    background: url(../../images/gripper.png) no-repeat;
+	margin-left: -5px;
+}
+
+#debug {
+    padding-top: 5px;
+}
+
+#percent {
+    font-size: 75%;
+    font-family: arial;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 1.1em;
+}
+
+#head_position {
+	position:absolute;
+	width: 160px;
+    height:40px;
+	bottom:15px;
+	left: 100px;
+}
+
+#position1 {
+	position:absolute;
+    width:40px;
+    height:40px;
+    background: url(../../images/position1.png) 0 40px;
+    cursor: pointer;
+}
+
+#position2 {
+	position:absolute;
+    width:40px;
+    height:40px;
+    left: 60px;
+    background: url(../../images/position2.png) no-repeat;
+	cursor: pointer;
+}
+
+#position3 {
+	position:absolute;
+    width:40px;
+    height:40px;
+    left: 120px;
+    background: url(../../images/position3.png) no-repeat;
+	cursor: pointer;    
+}
+
+#camvid-slider {
+	position:absolute;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+
+#camvid-slider-bar {
+	position:absolute;
+	right:56px;
+    width:150px;
+    height:68px;
+    background: url(../../images/camvid_bg.png) no-repeat;
+}
+
+#camvid-capture {
+    width:78px;
+    height:50px;
+    background: url(../../images/capture-2.png) 0 0;
+}
+
+#camvid-slider-handle {
+    width:68px;
+    height:36px;
+    cursor:ew-resize;
+    background: url(../../images/camvid_gripper.png) no-repeat;
+	top: 7px;
+}
+
+#fullscreen-slider {
+	position:absolute;
+	top: 20px;
+	left: 20px;
+	cursor: pointer;
+}
+
+#fullscreen-slider-bar {
+	position:absolute;
+	left:0px;
+    width:150px;
+    height:64px;
+    /*background: url(../../images/camvid_bg.png) no-repeat;*/
+   background: url(../../images/accelerometer.png) no-repeat;
+}
+
+#fullscreen-slider-handle {
+    width:68px;
+    height:36px;
+    cursor:ew-resize;
+    background: url(../../images/camvid_gripper.png) no-repeat;
+	top: 21px;
+}
+
+#controller {
+	width: 250px;
+	height: 250px;
+	position:absolute;
+	bottom: 60px;
+	right: 30px;
+    background: url(../../images/controller_bg.png) no-repeat;
+}
+
+#forward {
+	width: 130px;
+	height: 36px;
+	position: relative;
+    background: url(../../images/forward.png) no-repeat;
+	left: 60px;
+	top: -10px;
+	cursor: pointer;
+}
+
+#backward {
+	width: 130px;
+	height: 36px;
+	position: relative;
+    background: url(../../images/backward.png) no-repeat;
+	left: 60px;
+	top: 55px;
+	cursor: pointer;
+	z-index: 2;
+}
+
+#strifeleft {
+	width: 36px;
+	height: 130px;
+	position: relative;
+    background: url(../../images/left.png) no-repeat;
+	left: -10px;
+	top: 24px;
+	cursor: pointer;
+}
+
+#striferight {
+	width: 36px;
+	height: 130px;
+	position: absolute;
+    background: url(../../images/right.png) no-repeat;
+	left: 225px;
+	top: 60px;
+	cursor: pointer;
+}
+
+#rotate_buttons {
+	width: 200px;
+	height: 63px;
+	position:absolute;
+	bottom: 15px;
+	right: 30px;
+	z-index:1;
+}
+
+#rotate_right {
+	width: 100px;
+	height: 63px;
+	position: absolute;
+    background: url(../../images/rotate_right.png) no-repeat;
+	right: 25px;
+	top: 0px;
+	cursor: pointer;	
+}
+
+#rotate_left {
+	width: 100px;
+	height: 63px;
+	position: absolute;
+    background: url(../../images/rotate_left.png) no-repeat;
+	right: 125px;
+	top: 0px;
+	cursor: pointer;
+}
+#debug {
+	position: absolute;
+	left:100px;
+	top:100px;
+}

@@ -1,0 +1,59 @@
+*
+{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+/* Layout */
+body
+{
+	width: auto;
+	height: auto;
+	background-color: #2b2b2b;
+    font-family: arial;
+    font-size: 10pt;
+}
+
+:-webkit-full-screen {
+	background-color: #2b2b2b;	
+}
+
+#camera_container {
+	top: 20px;
+	left: 20px;
+	right: 20px;
+	bottom: 20px;
+	position:absolute;
+	border: 3px coral solid;
+	z-index: 1;
+}
+
+#camera_container2 {
+	top: 20px;
+	left: 20px;
+	right: 20px;
+	bottom: 20px;
+	position:absolute;
+	border: 3px coral solid;
+	z-index: 99;
+}
+
+#joystick_box {
+    height: 160px;
+    left: 42px;
+    position: relative;
+    top: -160px;
+    width: 162px;
+}
+
+#joystick {
+    position: relative;
+    background: url('../../images/rovioboy.png') no-repeat top left;
+    width: 40px; height: 40px;
+    top: 61px; left: 61px;
+}
+
+#debug {
+	color: #FFFFFF;
+}
