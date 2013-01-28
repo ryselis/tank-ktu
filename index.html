@@ -103,8 +103,10 @@
 						if(v==0.9){
 						/* accelerometer_on=true; setAllButtonsUp('forward', 'forward', 'strifeleft', 'left', 'striferight', 'right', 'backward', 'backward', 'rotate_left', 'left', 'rotate_right', 'right');
 						*/
+						
 						src="http://192.168.42.202/tank/on";
-                        new Ajax.Request(src, {
+                        document.location.href = src
+                        /*new Ajax.Request(src, {
                             method: 'get',
                             onSuccess: function(transport) {
                                /* var response = transport.responseText || "no response text";
@@ -116,6 +118,7 @@
                             onFailure: function() { alert('Something went wrong...'); }
                         });
                         src="http://192.168.42.202/tank/off";
+                        document.location.href = src
                         new Ajax.Request(src, {
                             method: 'get',
                             onSuccess: function(transport) {
@@ -126,7 +129,7 @@
                                 savingFoto = false;*/
                             },
                             onFailure: function() { alert('Something went wrong...'); }
-                        });
+                        });*/
     
 						}
 						if(v==0.1){ accelerometer_on=false; setAllButtonsUp('forward', 'forward', 'strifeleft', 'left', 'striferight', 'right', 'backward', 'backward', 'rotate_left', 'left', 'rotate_right', 'right');}
