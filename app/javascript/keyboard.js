@@ -3,7 +3,7 @@ $(document).observe('keydown', function (e) {
         	var shiftDown = false; 
 			
 			switch (e.keyCode) {
-				case 16:
+				case 16:	// Shift
 					shiftDown = true;
 					break;
 			}
@@ -57,12 +57,20 @@ $(document).observe('keydown', function (e) {
 						else
 						tankMove('forward');
             		break;
+            	case 188:	// ,
+            		turretMove('left');
+            		break;
+            	case 190:	// .
+            		turretMove('right');
+            		break;	
             	case 81:	//Q
             		turretMove('left');
             		break;
             	case 69:	//E
             		turretMove('right');
             		break;
+            	case 17:  	//Ctrl
+            		tankShoot('cannon_on');
             	}
 	//	}
      });
