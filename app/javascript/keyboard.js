@@ -1,5 +1,5 @@
 $(document).observe('keydown', function (e) {
-	if (!accelerometer_on){
+	//if (!accelerometer_on){
         	var shiftDown = false; 
 			
 			switch (e.keyCode) {
@@ -57,6 +57,12 @@ $(document).observe('keydown', function (e) {
 						else
 						tankMove('forward');
             		break;
+            	case 81:	//Q
+            		turretMove('left');
+            		break;
+            	case 69:	//E
+            		turretMove('right');
+            		break;
             	}
-		}
+	//	}
      });
