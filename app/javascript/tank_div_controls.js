@@ -38,6 +38,13 @@ function request(req) {
     });
 }
 
+function tankShoot(gun) {
+    if (gun == "cannon_on") {
+        request("main_gun/fire_simulate/on")
+    }
+
+}
+
 function tankMove(move){
     switch(move){
         case 'left':
