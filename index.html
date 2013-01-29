@@ -222,8 +222,10 @@
 		 onmousedown="CaptureON('camvid-capture', 0);" onmouseup="CaptureON('camvid-capture', 1);"></div>
 	</div>
 	<div id="tank_body" onmouseup=""  onmousedown="">
-	    <div id="turret"></div>
-	    <div id="shoot_missile" onmouseup="" onmousedown="tankShoot('cannon_on')"></div>
+	    <div id="turret">
+            <div id="shoot_missile" onmouseup="" onmousedown="tankShoot('cannon_on')"></div>
+	    </div>
+
 	    <div id="hidden_mouse_position" value="-1"></div>
 		<!--<div id="forward"
 			ontouchstart="event.preventDefault(); setButtonDown('forward', 'forward', 0, 36);" ontouchend="event.preventDefault(); setButtonUp('forward', 'forward');"

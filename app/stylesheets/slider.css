@@ -144,14 +144,15 @@
     right: 25px;
     background: url(../../PNGs/Turret.png) no-repeat;
     z-index: 1;
+
 }
 
 #shoot_missile {
     width: 23px;
     height: 24px;
     position: absolute;
-    bottom: 122px;
-    right: 81px;
+    bottom: 28px;
+    right: 56px;
     background: url(../../PNGs/Shoot.png) no-repeat;
     z-index: 2;
 }

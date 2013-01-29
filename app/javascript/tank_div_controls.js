@@ -18,6 +18,7 @@ function RevertTank(){
     });
     $('hidden_mouse_position').setAttribute('value', -1);
     $('turret').style.MozTransform = 'rotate(0deg)';
+    $('turret').style.webkitTransform = 'rotate(360deg)';
 }
 
 function SetInitPosition(event){
@@ -39,10 +40,12 @@ function MoveTankImageDown() {
 
 function RotateTurretImageClock() {
 	$('turret').style.MozTransform = 'rotate(15deg)';
+	$('turret').style.webkitTransform = 'rotate(15deg)';
 }
 
 function RotateTurretImageCountClock() {
 	$('turret').style.MozTransform = 'rotate(-15deg)';
+	$('turret').style.webkitTransform = 'rotate(-15deg)';
 }
 
 function request(req) {
