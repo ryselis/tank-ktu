@@ -24,14 +24,12 @@ function SetInitPosition(event){
 
 
 function MoveTankImageUp() {
-    tankMove("forward");
 	$('tank_body').setStyle({
 		bottom : '80px'
 	});
 }
 
 function MoveTankImageDown() {
-    tankMove("back")
 	$('tank_body').setStyle({
 		bottom : '30px'
 	});
