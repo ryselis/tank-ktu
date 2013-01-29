@@ -57,7 +57,7 @@ $(document).observe('keydown', function (e) {
             	default:
             		is_hotkey = false;
             	}
-            	
+            	/*
             	switch (direction){
             		case 'move_left':
             			image_url_part = 'left';
@@ -91,10 +91,10 @@ $(document).observe('keydown', function (e) {
             			image_part_url = 'right';
             			button_name = 'rotate_right';
             			break;
-            	}
+            	}*/
             	
-            if (speed != 11 && (is_moving == 0 || ((direction1!=lastDirection1 || direction2 != lastDirection2) && direction1 != opposing_direction &&
-            		direction2 != opposing_direction))){
+            if (is_moving == 0 || ((direction1!=lastDirection1 || direction2 != lastDirection2) && direction1 != opposing_direction &&
+            		direction2 != opposing_direction)){
             		if (direction1 != '' && direction2 == ''){
             			direction = direction1;
             		}
@@ -120,8 +120,8 @@ $(document).observe('keydown', function (e) {
             					break;
             			}
             		}
-            		stopMoving();
-            		startMoving(direction, speed);
+            		is_moving=0;
+            		tankMove(direction, speed);
             		console.log(direction1);
             		console.log(direction2);
             		console.log(direction);
@@ -130,7 +130,7 @@ $(document).observe('keydown', function (e) {
             		is_moving = 1;
             		logAction('start');
             	}
-            		var image_url_part;
+            	/*	var image_url_part;
             		var button_name;
             		var xpoz, ypoz;
             	switch (direction){
@@ -167,7 +167,7 @@ $(document).observe('keydown', function (e) {
             			button_name = 'rotate_right';
             			break;
             		
-            	}
+            	}*/
             	/*if (is_hotkey){
             		if (is_rotkey){
             			setButtonDown2(button_name, image_part_url, 0, 62)
@@ -227,8 +227,7 @@ $(document).observe('keydown', function (e) {
 				}
 			}
 			if (is_key_up){
-         		stopMoving();
-         		is_moving = 0;
+         		is_moving=0;
          		lastDirection = 'stop_moving';
          	}
          	if (direction1 != '' && direction2 == ''){
@@ -256,39 +255,39 @@ $(document).observe('keydown', function (e) {
             					break;
             			}
             }
-            		stopMoving();
-            		//startMoving(direction, speed);
+            		is_moving=0;
+            		//tankMove(direction, speed);
          });
-function setButtonBackground(button, direction, xpos, ypos) {
+/*function setButtonBackground(button, direction, xpos, ypos) {
 			$(button).setStyle({background: 'url(images/'+direction+'.png) '+xpos+'px '+ypos+'px'});
-		}        
+		}   */     
          
 function setButtonDown(button, direction, xpos, ypos) {
-			$(button).setStyle({background: 'url(images/'+direction+'.png) '+xpos+'px '+ypos+'px'});
+	//		$(button).setStyle({background: 'url(images/'+direction+'.png) '+xpos+'px '+ypos+'px'});
 			if (speed != 11){
-				if(direction=='forward') startMoving('move_forward',speed);
-				if(direction=='backward') startMoving('move_back',speed);
-				if(direction=='left') startMoving('move_left',speed);
-				if(direction=='right') startMoving('move_right',speed);
+				if(direction=='forward') tankMove('move_forward',speed);
+				if(direction=='backward') tankMove('move_back',speed);
+				if(direction=='left') tankMove('move_left',speed);
+				if(direction=='right') tankMove('move_right',speed);
 				logAction('start');
 			}
 		}
 		
 		// this image sprite based function should replace setButtonDown
 		function setButtonDown2(button, direction, xpoz, ypoz) {
-			$(button).setStyle({background: 'url(images/rotate_'+direction+'.png) '+xpoz+' '+ypoz+'px'});
-			startMoving("rot_"+direction,turn_speed);
+		//	$(button).setStyle({background: 'url(images/rotate_'+direction+'.png) '+xpoz+' '+ypoz+'px'});
+			tankMove("rot_"+direction,turn_speed);
 		}
 		
 		function setButtonUp(button, direction) {
-			$(button).setStyle({background: 'url(images/'+direction+'.png)'});
-			stopMoving();
+		//	$(button).setStyle({background: 'url(images/'+direction+'.png)'});
+			is_moving=0;
 			logAction('end 1');
 		}
 		
 		function setButtonUp2(button, direction) {
-			$(button).setStyle({background: 'url(images/rotate_'+direction+'.png)'});
-			stopMoving();
+		//	$(button).setStyle({background: 'url(images/rotate_'+direction+'.png)'});
+			is_moving=0;
 			logAction('end 1');
 		}
 
@@ -300,7 +299,67 @@ function setButtonDown(button, direction, xpos, ypos) {
 			$(button4).setStyle({background: 'url(images/'+direction4+'.png)'});
 			setButtonUp2(button5, direction5);
 			setButtonUp2(button6, direction6);
-			stopMoving();
+			is_moving=0;
 			logAction('end 2');*/
 			
-		}
+		}		
+		
+	function tankMove(move_id,speed){
+     /*  
+    if(key_shiftdown){
+        speed = 7;
+    }
+*/
+ //   speed = Math.round(speed);
+    is_moving = 1;
+	
+    var dir = "";
+            
+    switch(move_id){
+        case 'rot_left':
+            dir = 'rotate/64';
+            break;
+        case 'rot_right':
+            dir = 'rotate/191';
+            break;
+        case 'move_forward':
+            dir = 'move/63';
+            break;
+        case 'move_left':
+            drive_cmd = 3;
+            break;
+        case 'move_right':
+            drive_cmd = 4;
+            break;
+        case 'move_back':
+            dir = 'move/191';
+            break;   
+        case 'move_fwd_left':
+            drive_cmd = 7;
+            break;
+        case 'move_fwd_right':
+            drive_cmd = 8;
+            break;
+        case 'move_bck_left':
+            drive_cmd = 9;
+            break;
+        case 'move_bck_right':
+            drive_cmd = 10;
+            break;
+    }
+	if (dir != ""){
+		src='http://192.168.42.202/' + dir;
+                        new Ajax.Request(src, {
+                            method: 'get',
+                            onSuccess: function(transport) {
+                               var response = transport.responseText || "no response text";
+                                $("fotoimage").setStyle({display: 'block'});
+                                $("fotoimage").setAttribute('src',src);
+                                hideImage.delay(5);
+                                savingFoto = false;
+                            },
+                            onFailure: function() { alert('Something went wrong...'); }
+                        });
+						}
+    
+}
