@@ -1,23 +1,25 @@
-function MoveTank(event){
-    position = $('hidden_mouse_position')[0].getValue();
-    var y = event.clientY;
-    if (y < position) {
-        MoveTankImageUp();
-    }
-    else{
-        MoveTankDown();
-    }
-    console.log(position, y);
+function MoveTank(event) {
+	position = $('hidden_mouse_position').getAttribute('value');
+	if (position >= 0) {
+		var y = event.clientY;
+		if (y < position) {
+			MoveTankImageUp();
+		} else {
+			MoveTankImageDown();
+		}
+	}
 }
+
 
 function RevertTank(){
     $('tank_body').setStyle({
         bottom: '50px'
     });
+    $('hidden_mouse_position').setAttribute('value', -1);
 }
 
 function SetInitPosition(event){
-    $('hidden_mouse_position').setValue(event.clientY);
+    $('hidden_mouse_position').setAttribute('value', event.clientY);
 }
 
 

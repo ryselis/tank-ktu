@@ -24,7 +24,8 @@
         }
         Event.observe(window, 'load', function(){
             $('tank_body').onmousemove = MoveTank;
-            $('tank_body').onmousedown = setInitPosition;
+            $('tank_body').onmousedown = SetInitPosition;
+            $(document).onmouseup = RevertTank;
         });
         function setSlideOutput(v) {
             $('percent').update(100-Math.round(v * 100) + '%');
@@ -196,7 +197,7 @@
 <a id="fake_link" href="" onclick="return false"></a>
 <div id="camera_container">
 </div>
-<div id="camera_container2" ontouchmove="event.preventDefault();" style="background-size: 100% 100%;" onmouseup="setAllButtonsUp('forward', 'forward', 'strifeleft', 'left', 'striferight', 'right', 'backward', 'backward', 'rotate_left', 'left', 'rotate_right', 'right');">
+<div id="camera_container2" ontouchmove="event.preventDefault();" style="background-size: 100% 100%;">
 	<div id="slider">
 		<div id="pedal" ontouchstart="event.preventDefault(); setPedalPosition(1);" ontouchend="setPedalPosition(0);"></div>
 		<div id="slider-bar">
@@ -223,7 +224,7 @@
 	<div id="tank_body" onmouseup=""  onmousedown="">
 	    <div id="turret"></div>
 	    <div id="shoot_missile" onmouseup="" onmousedown="tankShoot('cannon_on')"></div>
-	    <div id="hidden_mouse_position" value="0"></div>
+	    <div id="hidden_mouse_position" value="-1"></div>
 		<!--<div id="forward"
 			ontouchstart="event.preventDefault(); setButtonDown('forward', 'forward', 0, 36);" ontouchend="event.preventDefault(); setButtonUp('forward', 'forward');"
 			onmousedown="setButtonDown('forward', 'forward', 0, 36);" onmouseup="setButtonUp('forward', 'forward');"></div>
