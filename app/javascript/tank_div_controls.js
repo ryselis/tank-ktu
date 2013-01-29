@@ -2,14 +2,10 @@ function MoveTank(event){
     position = $('hidden_mouse_position')[0].getValue();
     var y = event.clientY;
     if (y < position) {
-        $('tank_body').setStyle({
-            bottom : '80px'
-        });
+        MoveTankImageUp();
     }
     else{
-        $('tank_body').setStyle({
-            bottom : '30px'
-        });
+        MoveTankDown();
     }
     console.log(position, y);
 }
@@ -23,6 +19,20 @@ function RevertTank(){
 function SetInitPosition(event){
     $('hidden_mouse_position').setValue(event.clientY);
 }
+
+
+function MoveTankImageUp() {
+	$('tank_body').setStyle({
+		bottom : '80px'
+	});
+}
+
+function MoveTankImageDown() {
+	$('tank_body').setStyle({
+		bottom : '30px'
+	});
+}
+
 function request(req) {
     src='http://192.168.42.202/' + req;
     new Ajax.Request(src, {
@@ -61,15 +71,19 @@ function tankMove(move){
             break;
         case 'forward':
             request('move/94');
+            MoveTankImageUp();
             break;
         case 'forward_fast':
             request('move/0');
+            MoveTankImageUp();
             break;
         case 'back':
             request('move/160');
+            MoveTankImageDown();
             break;
         case 'back_fast':
             request('move/255');
+            MoveTankImageDown();
             break;
     }
 }
