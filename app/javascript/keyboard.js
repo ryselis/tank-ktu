@@ -72,5 +72,5 @@ $(document).observe('keydown', function (e) {
             	case 17:  	//Ctrl
             		tankShoot('cannon_on');
             	}
-	//	}
+
      });
