@@ -93,9 +93,7 @@ function tankMove(move){
 }
 
 function turretMove(side){
-	request('turret/' + side + '/on');
-	//request('turret/' + side + '/off');
-	
+	request('turret/' + side + '/on');	
 }
 
 
