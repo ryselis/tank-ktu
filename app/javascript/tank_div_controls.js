@@ -41,10 +41,10 @@ function request(req) {
 function tankMove(move){
     switch(move){
         case 'left':
-            request('rotate/64');
+            request('rotate/100');
             break;
         case 'right':
-            request('rotate/191');
+            request('rotate/160');
             break;
         case 'left_fast':
             request('rotate/0');
@@ -53,13 +53,13 @@ function tankMove(move){
             request('rotate/255');
             break;
         case 'forward':
-            request('move/63');
+            request('move/94');
             break;
         case 'forward_fast':
             request('move/0');
             break;
         case 'back':
-            request('move/191');
+            request('move/160');
             break;
         case 'back_fast':
             request('move/255');
