@@ -64,7 +64,7 @@ $(document).observe('keydown', function (e) {
             		turretMove('right');
             		break;
             	}
-	//	}
+
      });
      
 $(document).observe('keyup', function(e){
