@@ -63,10 +63,10 @@ function processAccelerometer(accelerationX, accelerationY, accelerationZ)
 				}
 			}
 			else {
-				setAllButtonsUp('forward', 'forward', 'strifeleft', 'left', 
+				/*setAllButtonsUp('forward', 'forward', 'strifeleft', 'left', 
 						'striferight', 'right', 'backward', 'backward', 'rotate_left',
 						 'left', 'rotate_right', 'right');
-						}
+						}*/
 			lastDirection = direction;
 			}
 		}
