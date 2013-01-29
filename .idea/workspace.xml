@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1506cd5d-901d-4da4-9a18-340358b2e37d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/jquery.js" afterPath="$PROJECT_DIR$/app/javascript/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/mouse.js" afterPath="$PROJECT_DIR$/app/javascript/mouse.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/tank_div_controls.js" afterPath="$PROJECT_DIR$/app/javascript/tank_div_controls.js" />
     </list>
     <ignored path="tank-ktu.iws" />
@@ -25,17 +23,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="211" column="40" selection-start="8710" selection-end="8710" vertical-scroll-proportion="-7.769231">
-              <folding>
-                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="accelerometer.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/javascript/accelerometer.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -57,19 +44,8 @@
       <file leaf-file-name="tank_div_controls.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/javascript/tank_div_controls.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="5" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.6873563">
+            <state line="33" column="18" selection-start="633" selection-end="633" vertical-scroll-proportion="0.21839081">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/javascript/jquery.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="35" selection-start="93068" selection-end="93068" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -96,7 +72,7 @@
       <file leaf-file-name="keyboard.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/javascript/keyboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="36" selection-start="1002" selection-end="1002" vertical-scroll-proportion="0.0">
+            <state line="48" column="35" selection-start="1121" selection-end="1121" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -106,15 +82,6 @@
         <entry file="file://$PROJECT_DIR$/app/javascript/controls.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="35" column="58" selection-start="1762" selection-end="1762" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mouse.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/javascript/mouse.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="1" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -143,8 +110,8 @@
         <option value="$PROJECT_DIR$/app/javascript/jquery-1.9.0.js" />
         <option value="$PROJECT_DIR$/app/javascript/keyboard.js" />
         <option value="$PROJECT_DIR$/app/javascript/jquery.js" />
-        <option value="$PROJECT_DIR$/app/javascript/tank_div_controls.js" />
         <option value="$PROJECT_DIR$/app/javascript/mouse.js" />
+        <option value="$PROJECT_DIR$/app/javascript/tank_div_controls.js" />
       </list>
     </option>
   </component>
@@ -321,7 +288,11 @@
       <created>1359469534900</created>
       <updated>1359469534900</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="jquery deleted">
+      <created>1359477906404</created>
+      <updated>1359477906404</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -382,7 +353,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="tank cannon button working" />
+    <option name="LAST_COMMIT_MESSAGE" value="jquery deleted" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -401,6 +372,7 @@
     <MESSAGE value="switch tank control fix" />
     <MESSAGE value="tank positions fixed" />
     <MESSAGE value="tank cannon button working" />
+    <MESSAGE value="jquery deleted" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -444,13 +416,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/accelerometer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="48" selection-start="682" selection-end="682" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/javascript/dragdrop.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="23" selection-start="739" selection-end="739" vertical-scroll-proportion="0.0">
@@ -458,41 +423,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascript/keyboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="35" selection-start="1121" selection-end="1121" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="211" column="40" selection-start="8710" selection-end="8710" vertical-scroll-proportion="-7.769231">
+        <state line="222" column="51" selection-start="9217" selection-end="9217" vertical-scroll-proportion="0.345367">
           <folding>
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/jquery.js">
+    <entry file="file://$PROJECT_DIR$/app/javascript/accelerometer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="35" selection-start="93068" selection-end="93068" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/mouse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="1" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/keyboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="36" selection-start="1002" selection-end="1002" vertical-scroll-proportion="0.0">
+        <state line="11" column="48" selection-start="682" selection-end="682" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/javascript/tank_div_controls.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="5" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.6873563">
+        <state line="33" column="18" selection-start="633" selection-end="633" vertical-scroll-proportion="0.21839081">
           <folding />
         </state>
       </provider>

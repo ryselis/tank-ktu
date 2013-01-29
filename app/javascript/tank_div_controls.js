@@ -24,12 +24,14 @@ function SetInitPosition(event){
 
 
 function MoveTankImageUp() {
+    tankMove("forward");
 	$('tank_body').setStyle({
 		bottom : '80px'
 	});
 }
 
 function MoveTankImageDown() {
+    tankMove("back")
 	$('tank_body').setStyle({
 		bottom : '30px'
 	});
@@ -52,7 +54,7 @@ function request(req) {
 
 function tankShoot(gun) {
     if (gun == "cannon_on") {
-        request("main_gun/fire_simulate/on")
+        request("main_gun/fire_simulate/on");
     }
 
 }
