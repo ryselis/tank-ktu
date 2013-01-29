@@ -220,25 +220,25 @@
 		<div id="camvid-capture" ontouchstart="event.preventDefault(); CaptureON('camvid-capture', 0);" ontouchend="event.preventDefault(); CaptureON('camvid-capture', 1);"
 		 onmousedown="CaptureON('camvid-capture', 0);" onmouseup="CaptureON('camvid-capture', 1);"></div>
 	</div>
-	<div id="tank_body" onmouseup="RevertTank()"  onmousedown="SetInitPosition">
+	<div id="tank_body" onmouseup=""  onmousedown="">
 	    <div id="turret"></div>
-	    <div id="shoot_missile"></div>
+	    <div id="shoot_missile" onmouseup="" onmousedown="tankShoot('cannon_on')"></div>
 	    <div id="hidden_mouse_position" value="0"></div>
-		<!--<div id="forward" 
-			ontouchstart="event.preventDefault(); setButtonDown('forward', 'forward', 0, 36);" ontouchend="event.preventDefault(); setButtonUp('forward', 'forward');" 
+		<!--<div id="forward"
+			ontouchstart="event.preventDefault(); setButtonDown('forward', 'forward', 0, 36);" ontouchend="event.preventDefault(); setButtonUp('forward', 'forward');"
 			onmousedown="setButtonDown('forward', 'forward', 0, 36);" onmouseup="setButtonUp('forward', 'forward');"></div>
-		<div id="strifeleft" 
-			ontouchstart="event.preventDefault(); setButtonDown('strifeleft', 'left', 36, 0);" ontouchend="event.preventDefault(); setButtonUp('strifeleft', 'left');" 
+		<div id="strifeleft"
+			ontouchstart="event.preventDefault(); setButtonDown('strifeleft', 'left', 36, 0);" ontouchend="event.preventDefault(); setButtonUp('strifeleft', 'left');"
 			onmousedown="setButtonDown('strifeleft', 'left', 36, 0);" onmouseup="setButtonUp('strifeleft', 'left');"></div>
-		<div id="striferight" 
-			ontouchstart="event.preventDefault(); setButtonDown('striferight', 'right', 36, 0);" ontouchend="event.preventDefault(); setButtonUp('striferight', 'right');" 
+		<div id="striferight"
+			ontouchstart="event.preventDefault(); setButtonDown('striferight', 'right', 36, 0);" ontouchend="event.preventDefault(); setButtonUp('striferight', 'right');"
 			onmousedown="setButtonDown('striferight', 'right', 36, 0);" onmouseup="setButtonUp('striferight', 'right');"></div>
-		<div id="backward" 
-			ontouchstart="event.preventDefault(); setButtonDown('backward', 'backward', 0, 36);" ontouchend="event.preventDefault(); setButtonUp('backward', 'backward');" 
+		<div id="backward"
+			ontouchstart="event.preventDefault(); setButtonDown('backward', 'backward', 0, 36);" ontouchend="event.preventDefault(); setButtonUp('backward', 'backward');"
 			onmousedown="setButtonDown('backward', 'backward', 0, 36);" onmouseup="setButtonUp('backward', 'backward');"></div>
         <div id="joystick_box">
             <div id="joystick"></div>
-        </div>-->	
+        </div>-->
 	</div>
 	<!--<div id="rotate_buttons">
 		<div id="rotate_left" 
