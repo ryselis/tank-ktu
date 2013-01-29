@@ -156,6 +156,15 @@
     z-index: 2;
 }
 
+#pedal {
+	position:absolute;
+    width:47px;
+    height:94px;
+    bottom:10px;
+    background: url(../../PNGs/pedal-before.png);
+    cursor: pointer;
+}
+
 #forward {
 	width: 130px;
 	height: 36px;

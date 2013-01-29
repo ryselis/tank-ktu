@@ -10,10 +10,11 @@
     <script type="text/javascript" src="app/javascript/accelerometer.js"></script>
     <script type="text/javascript" src="app/javascript/camera.js"></script>
     <script type="text/javascript" src="app/javascript/tank_div_controls.js"></script>
+    <script type="text/javascript" src="app/javascript/sprint.js"></script>
     <script type="text/javascript">
     // <![CDATA[
         var hHeight, bHeight, slide, direction1='', direction2='', lastDirection = 'stop_moving', last_cam_pos = 'down';
-		var speed=0.90, captureY = 0, accelerometer_on = false, savingFoto = false;
+		var speed=0.90, captureY = 0, accelerometer_on = false, savingFoto = false, sprint = 0;
         var position = 0;
         function setBgPos(v) {
             var off = v * hHeight;
@@ -197,14 +198,15 @@
 </div>
 <div id="camera_container2" ontouchmove="event.preventDefault();" style="background-size: 100% 100%;" onmouseup="setAllButtonsUp('forward', 'forward', 'strifeleft', 'left', 'striferight', 'right', 'backward', 'backward', 'rotate_left', 'left', 'rotate_right', 'right');">
 	<div id="slider">
+		<div id="pedal" ontouchstart="event.preventDefault(); setPedalPosition(1);" ontouchend="setPedalPosition(0);"></div>
 		<div id="slider-bar">
-			<div id="slider-handle"><p id="percent"></p></div>
+			<div id="slider-handle"><p id="percent"></p></div> 
 		</div>
 	</div>
 	<div id="head_position">
 		<div id="position1" ontouchstart="event.preventDefault(); setHeadPosition('down');" onmousedown="setHeadPosition('down');"></div>
 		<div id="position2" ontouchstart="event.preventDefault(); setHeadPosition('mid');" onmousedown="setHeadPosition('mid');"></div>
-		<div id="position3" ontouchstart="event.preventDefault(); setHeadPosition('up');" onmousedown="setHeadPosition('up');"></div>
+		<div id="position3" ontouchstart="event.preventDefault(); setHeadPosition('up');" onmousedown="setHeadPosition('up');"></div> 
 	</div>
 	<div id="fullscreen-slider">
 		<div id="fullscreen-slider-bar">
