@@ -74,3 +74,7 @@ $(document).observe('keydown', function (e) {
             	}
 
      });
+     
+$(document).observe('keyup', function(e){
+	RevertTank();
+});
