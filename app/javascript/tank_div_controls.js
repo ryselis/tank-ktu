@@ -23,3 +23,25 @@ function RevertTank(){
 function SetInitPosition(event){
     $('hidden_mouse_position').setValue(event.clientY);
 }
+function request(req) {
+    src='http://192.168.42.202/' + req;
+    new Ajax.Request(src, {
+        method: 'get',
+        onSuccess: function(transport) {
+            var response = transport.responseText || "no response text";
+            $("fotoimage").setStyle({display: 'block'});
+            $("fotoimage").setAttribute('src',src);
+            hideImage.delay(5);
+            savingFoto = false;
+        },
+        onFailure: function() { alert('Something went wrong...'); }
+    });
+}
+
+function tankMove(angle ,speed) {
+    request("rotate/0");
+    request("move/0");
+
+}
+
+

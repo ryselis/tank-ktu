@@ -304,12 +304,12 @@ function setButtonDown(button, direction, xpos, ypos) {
 			
 		}		
 		
-	function tankMove(move_id,speed){
-     /*  
+	/*function tankMove(move_id,speed){
+     *//*
     if(key_shiftdown){
         speed = 7;
     }
-*/
+*//*
  //   speed = Math.round(speed);
     is_moving = 1;
 	
@@ -362,4 +362,4 @@ function setButtonDown(button, direction, xpos, ypos) {
                         });
 						}
     
-}
+}*/
