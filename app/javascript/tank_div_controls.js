@@ -38,10 +38,33 @@ function request(req) {
     });
 }
 
-function tankMove(angle ,speed) {
-    request("rotate/0");
-    request("move/0");
-
+function tankMove(move){
+    switch(move){
+        case 'left':
+            request('rotate/64');
+            break;
+        case 'right':
+            request('rotate/191');
+            break;
+        case 'left_fast':
+            request('rotate/0');
+            break;
+        case 'right_fast':
+            request('rotate/255');
+            break;
+        case 'forward':
+            request('move/63');
+            break;
+        case 'forward_fast':
+            request('move/0');
+            break;
+        case 'back':
+            request('move/191');
+            break;
+        case 'back_fast':
+            request('move/255');
+            break;
+    }
 }
 
 
