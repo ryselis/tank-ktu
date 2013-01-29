@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1506cd5d-901d-4da4-9a18-340358b2e37d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/keyboard.js" afterPath="$PROJECT_DIR$/app/javascript/keyboard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/tank_div_controls.js" afterPath="$PROJECT_DIR$/app/javascript/tank_div_controls.js" />
     </list>
     <ignored path="tank-ktu.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,7 +27,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="219" column="70" selection-start="8958" selection-end="8958" vertical-scroll-proportion="-13.0">
+            <state line="211" column="40" selection-start="8710" selection-end="8710" vertical-scroll-proportion="-7.769231">
               <folding>
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -45,16 +47,16 @@
       <file leaf-file-name="tank_div_controls.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/javascript/tank_div_controls.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="67" selection-start="995" selection-end="995" vertical-scroll-proportion="0.0">
+            <state line="42" column="44" selection-start="1107" selection-end="1107" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rovio.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="rovio.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/javascript/rovio.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="166" column="19" selection-start="3481" selection-end="3481" vertical-scroll-proportion="0.074679114">
+            <state line="184" column="23" selection-start="3858" selection-end="3858" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <marker date="1359397808997" expanded="false" signature="11867:11880" placeholder="..." />
@@ -70,13 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="keyboard.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="keyboard.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/javascript/keyboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="26" selection-start="794" selection-end="794" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1359470305266" expanded="true" signature="44:1377" placeholder="{...}" />
-              </folding>
+            <state line="66" column="0" selection-start="1528" selection-end="1528" vertical-scroll-proportion="0.86321837">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,9 +120,9 @@
         <option value="$PROJECT_DIR$/app/stylesheets/slider.css" />
         <option value="$PROJECT_DIR$/app/javascript/tank_div_controls.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/app/javascript/keyboard.js" />
         <option value="$PROJECT_DIR$/app/javascript/jquery-1.9.0.js" />
         <option value="$PROJECT_DIR$/app/javascript/mouse.js" />
+        <option value="$PROJECT_DIR$/app/javascript/keyboard.js" />
       </list>
     </option>
   </component>
@@ -304,13 +304,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29273742" sideWeight="0.99063087" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24986821" sideWeight="0.7072626" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24986821" sideWeight="0.7072626" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -405,24 +405,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/keyboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="26" selection-start="794" selection-end="794" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1359470305266" expanded="true" signature="44:1377" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="219" column="70" selection-start="8958" selection-end="8958" vertical-scroll-proportion="-13.0">
-          <folding>
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/javascript/accelerometer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="36" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0">
@@ -432,7 +414,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/javascript/tank_div_controls.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="67" selection-start="995" selection-end="995" vertical-scroll-proportion="0.0">
+        <state line="42" column="44" selection-start="1107" selection-end="1107" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -451,9 +433,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="211" column="40" selection-start="8710" selection-end="8710" vertical-scroll-proportion="-7.769231">
+          <folding>
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/javascript/rovio.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="19" selection-start="3481" selection-end="3481" vertical-scroll-proportion="0.074679114">
+        <state line="184" column="23" selection-start="3858" selection-end="3858" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <marker date="1359397808997" expanded="false" signature="11867:11880" placeholder="..." />
@@ -465,6 +456,13 @@
             <marker date="1359397808997" expanded="false" signature="32968:32981" placeholder="..." />
             <marker date="1359397808997" expanded="false" signature="135941:135956" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascript/keyboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="0" selection-start="1528" selection-end="1528" vertical-scroll-proportion="0.86321837">
+          <folding />
         </state>
       </provider>
     </entry>
