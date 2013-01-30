@@ -11,51 +11,51 @@ $(document).observe('keydown', function (e) {
     		switch (e.keyCode) {
         		case Event.KEY_LEFT:
 					if (shiftDown) 
-					tankMove('left_fast')
+					tankMove('left_fast', true)
 						else
-						tankMove('left');
+						tankMove('left', true);
             		break;
         		case Event.KEY_RIGHT:
         			if (shiftDown) 
-					tankMove('right_fast')
+					tankMove('right_fast', true)
 						else
-						tankMove('right');
+						tankMove('right', true);
             		break;
             	case Event.KEY_DOWN:
             		if (shiftDown) 
-					tankMove('back_fast')
+					tankMove('back_fast', true)
 						else
-						tankMove('back');
+						tankMove('back', true);
             		break;
             	case Event.KEY_UP:
             		if (shiftDown) 
-					tankMove('forward_fast')
+					tankMove('forward_fast', true)
 						else
-						tankMove('forward');
+						tankMove('forward', true);
             		break;
             	case 65:	//A
         			if (shiftDown) 
-					tankMove('left_fast')
+					tankMove('left_fast', true)
 						else
-						tankMove('left');
+						tankMove('left', true);
             		break;
         		case 68:	//D
         			if (shiftDown) 
-					tankMove('right_fast')
+					tankMove('right_fast', true)
 						else
-						tankMove('right');
+						tankMove('right', true);
             		break;
             	case 83:	//S
             		if (shiftDown) 
-					tankMove('back_fast')
+					tankMove('back_fast', true)
 						else
-						tankMove('back');
+						tankMove('back', true);
             		break;
             	case 87:	//W
             		if (shiftDown) 
-					tankMove('forward_fast')
+					tankMove('forward_fast', true)
 						else
-						tankMove('forward');
+						tankMove('forward', true);
             		break;
             	case 188:	// ,
             		turretMove('left');
@@ -76,5 +76,37 @@ $(document).observe('keydown', function (e) {
      });
      
 $(document).observe('keyup', function(e){
-	RevertTank();
+
+    switch (e.keyCode) {
+        case Event.KEY_LEFT:
+            tankMove('left', false);
+            break;
+        case Event.KEY_RIGHT:
+            tankMove('right', false);
+            break;
+        case Event.KEY_DOWN:
+            tankMove('back', false);
+            break;
+        case Event.KEY_UP:
+            tankMove('forward', false);
+            break;
+        case 65:	//A
+            tankMove('left', false);
+            break;
+        case 68:	//D
+            tankMove('right', false);
+            break;
+        case 83:	//S
+            tankMove('back', false);
+            break;
+        case 87:	//W
+            tankMove('forward', false);
+            break;
+        case 81:	//Q
+            RevertTurret();
+            break;
+        case 69:	//E
+            RevertTurret();
+            break;
+    }
 });

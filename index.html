@@ -23,8 +23,14 @@
 			//$('debug').innerHTML = v;
         }
         Event.observe(window, 'load', function(){
-            $('tank_body').onmousemove = MoveTank;
+            $('tank_body').onmousemove = MouseTankMove;
             $('tank_body').onmousedown = SetInitPosition;
+            //tank rotate
+            $('tank_body').onmousemove = MouseTankRotate;
+            $('tank_body').onmousedown = SetInitPositionX;
+
+           /* $('turret').onmousemove = MouseTurretRotate;
+            $('turret').onmousedown = SetInitPositionX;*/
             $(document).onmouseup = RevertTank;
         });
         function setSlideOutput(v) {

@@ -1,4 +1,6 @@
-function MoveTank(event) {
+/*var globalX = 10;
+var globalY = 10;*/
+function MouseTankMove(event) {
 	position = $('hidden_mouse_position').getAttribute('value');
 	if (position >= 0) {
 		var y = event.clientY;
@@ -6,11 +8,52 @@ function MoveTank(event) {
 			MoveTankImageUp();
 		} else {
 			MoveTankImageDown();
-			MoveTankImageRot();
+			//MoveTankImageRot();
 		}
 	}
 }
 
+function MouseTankRotate(event) {
+    position = $('hidden_mouse_position').getAttribute('value');
+    if (position >= 0) {
+        var y = event.clientY;
+        var x = event.clientX;
+
+       /* if (abs(position - x) > globalX) {
+            if (x > position) {
+                RotateTankImageClock();
+            } else {
+                RotateTankImageCountClock();
+            }
+        }
+       */
+
+        if (x > position) {
+            RotateTankImageClock();
+        }  else {
+            RotateTankImageCountClock();
+        }
+    }
+}
+function MouseTurretRotate(event) {
+    position = $('hidden_mouse_position').getAttribute('value');
+    if (position >= 0) {
+        var y = event.clientY;
+        var x = event.clientX;
+
+        if (x > position) {
+            RotateTurretImageClock();
+        }  else {
+            RotateTurretImageCountClock();
+        }
+    }
+}
+function SetInitPosition(event){
+    $('hidden_mouse_position').setAttribute('value', event.clientY);
+}
+function SetInitPositionX(event){
+    $('hidden_mouse_position').setAttribute('value', event.clientX);
+}
 
 function RevertTank(){
     $('tank_body').setStyle({
@@ -19,11 +62,29 @@ function RevertTank(){
     $('hidden_mouse_position').setAttribute('value', -1);
     $('turret').style.MozTransform = 'rotate(0deg)';
     $('turret').style.webkitTransform = 'rotate(360deg)';
+
+    $('tank_body').style.MozTransform = 'rotate(0deg)';
+    $('tank_body').style.webkitTransform = 'rotate(360deg)';
+}
+function RevertTurret() {
+    //$('hidden_mouse_position').setAttribute('value', -1);
+    $('turret').style.MozTransform = 'rotate(0deg)';
+    $('turret').style.webkitTransform = 'rotate(360deg)'
 }
 
-function SetInitPosition(event){
-    $('hidden_mouse_position').setAttribute('value', event.clientY);
+function RevertTankRotate() {
+    $('tank_body').style.MozTransform = 'rotate(0deg)';
+    $('tank_body').style.webkitTransform = 'rotate(360deg)';
 }
+
+function RevertTankMove(){
+    $('tank_body').setStyle({
+        bottom: '50px'
+    });
+    $('hidden_mouse_position').setAttribute('value', -1);
+}
+
+
 
 
 function MoveTankImageUp() {
@@ -38,9 +99,23 @@ function MoveTankImageDown() {
 	});
 }
 
+function RotateTankImageClock() {
+    /*    $('turret').positionedOffset($('turret'))*/
+    $('tank_body').style.MozTransform = 'rotate(15deg)';
+    $('tank_body').style.webkitTransform = 'rotate(15deg)';
+
+}
+
+function RotateTankImageCountClock() {
+    $('tank_body').style.MozTransform = 'rotate(-15deg)';
+    $('tank_body').style.webkitTransform = 'rotate(-15deg)';
+
+}
+
+
 function RotateTurretImageClock() {
-    $('turret').positionedOffset($('turret'))
-	$('turret').style.MozTransform = 'rotate(15deg)';
+/*    $('turret').positionedOffset($('turret'))*/
+    $('turret').style.MozTransform = 'rotate(15deg)';
 	$('turret').style.webkitTransform = 'rotate(15deg)';
 }
 
@@ -48,6 +123,7 @@ function RotateTurretImageCountClock() {
 	$('turret').style.MozTransform = 'rotate(-15deg)';
 	$('turret').style.webkitTransform = 'rotate(-15deg)';
 }
+
 
 function request(req) {
     src='http://192.168.42.202/' + req;
@@ -77,15 +153,19 @@ function tankMove(move, state){
         switch(move){
             case 'left':
                 request('rotate/100');
+                RotateTankImageCountClock();
                 break;
             case 'right':
                 request('rotate/160');
+                RotateTankImageClock();
                 break;
             case 'left_fast':
                 request('rotate/0');
+                RotateTankImageCountClock();
                 break;
             case 'right_fast':
                 request('rotate/255');
+                RotateTankImageClock();
                 break;
             case 'forward':
                 request('move/94');
@@ -105,37 +185,28 @@ function tankMove(move, state){
                 break;
     }
     }
+    // tank movement turn off
     else {
         switch(move){
             case 'left':
                 request('rotate/127');
+                RevertTankRotate();
                 break;
             case 'right':
-                request('rotate/160');
-                break;
-            case 'left_fast':
-                request('rotate/0');
-                break;
-            case 'right_fast':
-                request('rotate/255');
+                request('rotate/127');
+                RevertTankRotate();
                 break;
             case 'forward':
-                request('move/94');
-                MoveTankImageUp();
-                break;
-            case 'forward_fast':
-                request('move/0');
-                MoveTankImageUp();
+                request('move/127');
+                RevertTankMove();
                 break;
             case 'back':
-                request('move/160');
-                MoveTankImageDown();
-                break;
-            case 'back_fast':
-                request('move/255');
-                MoveTankImageDown();
+                request('move/127');
+                RevertTankMove();
                 break;
         }
+    }
+}
 
 function turretMove(side){
 	request('turret/' + side + '/on');
