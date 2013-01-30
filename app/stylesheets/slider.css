@@ -142,6 +142,7 @@
     position: absolute;
     bottom: 95px;
     right: 25px;
+    transform-origin:50% 75%;
     background: url(../../PNGs/Turret.png) no-repeat;
     z-index: 1;
 
