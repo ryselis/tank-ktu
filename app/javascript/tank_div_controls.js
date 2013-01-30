@@ -71,24 +71,21 @@ function tankShoot(gun) {
 
 }
 
+
 function tankMove(move, state){
     if (state) {
         switch(move){
             case 'left':
                 request('rotate/100');
-                RotateTurretImageCountClock();
                 break;
             case 'right':
                 request('rotate/160');
-                RotateTurretImageClock();
                 break;
             case 'left_fast':
                 request('rotate/0');
-                RotateTurretImageCountClock();
                 break;
             case 'right_fast':
                 request('rotate/255');
-                RotateTurretImageClock();
                 break;
             case 'forward':
                 request('move/94');
@@ -112,19 +109,15 @@ function tankMove(move, state){
         switch(move){
             case 'left':
                 request('rotate/127');
-                RotateTurretImageCountClock();
                 break;
             case 'right':
                 request('rotate/160');
-                RotateTurretImageClock();
                 break;
             case 'left_fast':
                 request('rotate/0');
-                RotateTurretImageCountClock();
                 break;
             case 'right_fast':
                 request('rotate/255');
-                RotateTurretImageClock();
                 break;
             case 'forward':
                 request('move/94');
@@ -143,11 +136,17 @@ function tankMove(move, state){
                 MoveTankImageDown();
                 break;
         }
-    }
-}
 
 function turretMove(side){
-	request('turret/' + side + '/on');	
+	request('turret/' + side + '/on');
+	 switch(side){
+        case 'left':
+			RotateTurretImageCountClock();
+			break;
+		case 'right':
+			RotateTurretImageClock();	
+			break;
+		}
 }
 
 
