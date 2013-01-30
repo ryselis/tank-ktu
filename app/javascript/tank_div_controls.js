@@ -71,40 +71,78 @@ function tankShoot(gun) {
 
 }
 
-function tankMove(move){
-    switch(move){
-        case 'left':
-            request('rotate/100');
-            RotateTurretImageCountClock();
-            break;
-        case 'right':
-            request('rotate/160');
-            RotateTurretImageClock();
-            break;
-        case 'left_fast':
-            request('rotate/0');
-            RotateTurretImageCountClock();
-            break;
-        case 'right_fast':
-            request('rotate/255');
-            RotateTurretImageClock();
-            break;
-        case 'forward':
-            request('move/94');
-            MoveTankImageUp();
-            break;
-        case 'forward_fast':
-            request('move/0');
-            MoveTankImageUp();
-            break;
-        case 'back':
-            request('move/160');
-            MoveTankImageDown();
-            break;
-        case 'back_fast':
-            request('move/255');
-            MoveTankImageDown();
-            break;
+function tankMove(move, state){
+    if (state) {
+        switch(move){
+            case 'left':
+                request('rotate/100');
+                RotateTurretImageCountClock();
+                break;
+            case 'right':
+                request('rotate/160');
+                RotateTurretImageClock();
+                break;
+            case 'left_fast':
+                request('rotate/0');
+                RotateTurretImageCountClock();
+                break;
+            case 'right_fast':
+                request('rotate/255');
+                RotateTurretImageClock();
+                break;
+            case 'forward':
+                request('move/94');
+                MoveTankImageUp();
+                break;
+            case 'forward_fast':
+                request('move/0');
+                MoveTankImageUp();
+                break;
+            case 'back':
+                request('move/160');
+                MoveTankImageDown();
+                break;
+            case 'back_fast':
+                request('move/255');
+                MoveTankImageDown();
+                break;
+    }
+    }
+    else {
+        switch(move){
+            case 'left':
+                request('rotate/127');
+                RotateTurretImageCountClock();
+                break;
+            case 'right':
+                request('rotate/160');
+                RotateTurretImageClock();
+                break;
+            case 'left_fast':
+                request('rotate/0');
+                RotateTurretImageCountClock();
+                break;
+            case 'right_fast':
+                request('rotate/255');
+                RotateTurretImageClock();
+                break;
+            case 'forward':
+                request('move/94');
+                MoveTankImageUp();
+                break;
+            case 'forward_fast':
+                request('move/0');
+                MoveTankImageUp();
+                break;
+            case 'back':
+                request('move/160');
+                MoveTankImageDown();
+                break;
+            case 'back_fast':
+                request('move/255');
+                MoveTankImageDown();
+                break;
+        }
     }
 }
 
