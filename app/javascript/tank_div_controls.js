@@ -39,6 +39,7 @@ function MoveTankImageDown() {
 }
 
 function RotateTurretImageClock() {
+    $('turret').positionedOffset($('turret'))
 	$('turret').style.MozTransform = 'rotate(15deg)';
 	$('turret').style.webkitTransform = 'rotate(15deg)';
 }
