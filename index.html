@@ -25,12 +25,9 @@
         Event.observe(window, 'load', function(){
             $('tank_body').onmousemove = MouseTankMove;
             $('tank_body').onmousedown = SetInitPosition;
-            //tank rotate
-        /*    $('tank_body').onmousemove = MouseTankRotate;
-            $('tank_body').onmousedown = SetInitPositionX;
-*/
-           /* $('turret').onmousemove = MouseTurretRotate;
-            $('turret').onmousedown = SetInitPositionX;*/
+
+            $('turret').onmousemove = MouseTurretRotate;
+            $('turret').onmousedown = SetInitPositionTurret;
 
 
             $(document).onmouseup = RevertTank;
@@ -231,11 +228,13 @@
 		 onmousedown="CaptureON('camvid-capture', 0);" onmouseup="CaptureON('camvid-capture', 1);"></div>
 	</div>
 	<div id="tank_body" onmouseup=""  onmousedown="">
-	    <div id="turret">
+	    <div id="turret" onmouseup=""  onmousedown="">
             <div id="shoot_missile" onmouseup="" onmousedown="tankShoot('cannon_on')"></div>
 	    </div>
 
 	    <div id="hidden_mouse_positionX" value="-1"></div>
+        <!-- hidden position for turret -->
+	    <div id="hidden_mouse_positionT" value="-1"></div>
 	    <div id="hidden_mouse_positionY" value="-1"></div>
 		<!--<div id="forward"
 			ontouchstart="event.preventDefault(); setButtonDown('forward', 'forward', 0, 36);" ontouchend="event.preventDefault(); setButtonUp('forward', 'forward');"

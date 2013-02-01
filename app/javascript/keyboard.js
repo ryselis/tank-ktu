@@ -58,16 +58,16 @@ $(document).observe('keydown', function (e) {
 						tankMove('forward', true);
             		break;
             	case 188:	// ,
-            		turretMove('left');
+            		turretMove('left', true);
             		break;
             	case 190:	// .
-            		turretMove('right');
+            		turretMove('right', true);
             		break;	
             	case 81:	//Q
-            		turretMove('left');
+            		turretMove('left', true);
             		break;
             	case 69:	//E
-            		turretMove('right');
+            		turretMove('right', true);
             		break;
             	case 17:  	//Ctrl
             		tankShoot('cannon_on');

@@ -32,9 +32,13 @@ function MouseTankMove(event) {
 }
 
 function MouseTurretRotate(event) {
-    position = $('hidden_mouse_position').getAttribute('value');
+    //cancel bubble
+    if (!event) var event = window.event;
+    if (event) event.cancelBubble = true;
+    if (event.stopPropagation) event.stopPropagation();
+
+    position = $('hidden_mouse_positionT').getAttribute('value');
     if (position >= 0) {
-        var y = event.clientY;
         var x = event.clientX;
 
         if (x > position) {
@@ -49,6 +53,10 @@ function SetInitPosition(event){
     $('hidden_mouse_positionY').setAttribute('value', event.clientY);
 }
 
+function SetInitPositionTurret(event) {
+    $('hidden_mouse_positionT').setAttribute('value', event.clientX);
+}
+
 function RevertTank(){
     $('tank_body').setStyle({
         bottom: '50px'
@@ -60,18 +68,21 @@ function RevertTank(){
 
     $('tank_body').style.MozTransform = 'rotate(0deg)';
     $('tank_body').style.webkitTransform = 'rotate(360deg)';
+    RevertTankRotate();
+    RevertTurret();
+    RevertTankMove();
 }
 function RevertTurret() {
-    //$('hidden_mouse_position').setAttribute('value', -1);
-    $('turret').style.MozTransform = 'rotate(0deg)';
-    $('turret').style.webkitTransform = 'rotate(360deg)'
+    $('hidden_mouse_positionT').setAttribute('value', -1);
+
+    turretMove('left', false);
 }
 
 function RevertTankRotate() {
     $('tank_body').style.MozTransform = 'rotate(0deg)';
     $('tank_body').style.webkitTransform = 'rotate(360deg)';
     $('hidden_mouse_positionX').setAttribute('value', -1);
-    tankMove('left', false);
+   //tankMove('left', false);
 }
 
 function RevertTankMove(){
@@ -79,7 +90,7 @@ function RevertTankMove(){
         bottom: '50px'
     });
     $('hidden_mouse_positionY').setAttribute('value', -1);
-    tankMove('forward', false);
+    //tankMove('forward', false);
 }
 
 
@@ -206,16 +217,22 @@ function tankMove(move, state){
     }
 }
 
-function turretMove(side){
-	request('turret/' + side + '/on');
-	 switch(side){
-        case 'left':
-			RotateTurretImageCountClock();
-			break;
-		case 'right':
-			RotateTurretImageClock();	
-			break;
-		}
+function turretMove(side, state){
+    var stateT = state ? "/on" : "/off";
+	request('turret/' + side + stateT);
+	if (state) {
+        switch(side){
+            case 'left':
+                RotateTurretImageCountClock();
+                break;
+            case 'right':
+                RotateTurretImageClock();
+                break;
+        }
+    } else {
+        $('turret').style.MozTransform = 'rotate(0deg)';
+        $('turret').style.webkitTransform = 'rotate(360deg)';
+    }
 }
 
 
