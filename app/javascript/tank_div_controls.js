@@ -9,10 +9,18 @@ function MouseTankMove(event) {
 		if (Math.abs(positionY - y) > yOff) {
             if (y < positionY) {
                 MoveTankImageUp();
-                tankMove('forward', true);
+                if (shiftDown) {
+                    tankMove('forward_fast', true);
+                } else {
+                    tankMove('forward', true);
+                }
             } else {
                 MoveTankImageDown();
-                tankMove('back', true);
+                if (shiftDown) {
+                    tankMove('back_fast', true);
+                } else {
+                    tankMove('back', true);
+                }
             }
 		}
 	}
@@ -43,8 +51,10 @@ function MouseTurretRotate(event) {
 
         if (x > position) {
             RotateTurretImageClock();
+            turretMove('right', true);
         }  else {
             RotateTurretImageCountClock();
+            turretMove('left', true);
         }
     }
 }
@@ -76,6 +86,7 @@ function RevertTurret() {
     $('hidden_mouse_positionT').setAttribute('value', -1);
 
     turretMove('left', false);
+    turretMove('right', false);
 }
 
 function RevertTankRotate() {
@@ -218,7 +229,12 @@ function tankMove(move, state){
 }
 
 function turretMove(side, state){
-    var stateT = state ? "/on" : "/off";
+    var stateT;
+    if (state) {
+        stateT = "/on";
+    }   else {
+        stateT = "/off";
+    }
 	request('turret/' + side + stateT);
 	if (state) {
         switch(side){

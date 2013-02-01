@@ -70,4 +70,4 @@ function processAccelerometer(accelerationX, accelerationY, accelerationZ)
 			lastDirection = direction;
 			}
 		}
-		
+        }
