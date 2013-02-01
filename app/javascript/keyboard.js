@@ -111,5 +111,11 @@ $(document).observe('keyup', function(e){
         case 16:        // Shift
             setPedalPosition(0);
             break;
+        case 188:       // ,
+            RevertTurret();
+            break;
+        case 190:       // .
+            RevertTurret();
+            break;
     }
 });
