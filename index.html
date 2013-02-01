@@ -26,11 +26,13 @@
             $('tank_body').onmousemove = MouseTankMove;
             $('tank_body').onmousedown = SetInitPosition;
             //tank rotate
-            $('tank_body').onmousemove = MouseTankRotate;
+        /*    $('tank_body').onmousemove = MouseTankRotate;
             $('tank_body').onmousedown = SetInitPositionX;
-
+*/
            /* $('turret').onmousemove = MouseTurretRotate;
             $('turret').onmousedown = SetInitPositionX;*/
+
+
             $(document).onmouseup = RevertTank;
         });
         function setSlideOutput(v) {
@@ -233,7 +235,8 @@
             <div id="shoot_missile" onmouseup="" onmousedown="tankShoot('cannon_on')"></div>
 	    </div>
 
-	    <div id="hidden_mouse_position" value="-1"></div>
+	    <div id="hidden_mouse_positionX" value="-1"></div>
+	    <div id="hidden_mouse_positionY" value="-1"></div>
 		<!--<div id="forward"
 			ontouchstart="event.preventDefault(); setButtonDown('forward', 'forward', 0, 36);" ontouchend="event.preventDefault(); setButtonUp('forward', 'forward');"
 			onmousedown="setButtonDown('forward', 'forward', 0, 36);" onmouseup="setButtonUp('forward', 'forward');"></div>

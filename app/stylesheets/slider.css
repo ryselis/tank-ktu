@@ -143,6 +143,10 @@
     bottom: 95px;
     right: 25px;
     transform-origin:50% 75%;
+    -webkit-transform-origin:50% 75%;
+    -ms-transform-origin:50% 75%;
+    -o-transform-origin:50% 75%;
+    -moz-transform-origin:50% 75%;
     background: url(../../PNGs/Turret.png) no-repeat;
     z-index: 1;
 

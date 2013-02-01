@@ -1,32 +1,44 @@
-/*var globalX = 10;
-var globalY = 10;*/
+
 function MouseTankMove(event) {
-	position = $('hidden_mouse_position').getAttribute('value');
-	if (position >= 0) {
+    var xOff = 10;
+    var yOff = 10;
+	var positionX = $('hidden_mouse_positionX').getAttribute('value');
+	var positionY = $('hidden_mouse_positionY').getAttribute('value');
+	if (positionY >= 0) {
 		var y = event.clientY;
-		if (y < position) {
-			MoveTankImageUp();
-		} else {
-			MoveTankImageDown();
-			//MoveTankImageRot();
+		if (Math.abs(positionY - y) > yOff) {
+            if (y < positionY) {
+                MoveTankImageUp();
+            } else {
+                MoveTankImageDown();
+            }
 		}
 	}
+    if (positionX >= 0) {
+        var x = event.clientX;
+        if (Math.abs(positionX - x) > xOff) {
+            if (x > positionX) {
+                RotateTankImageClock();
+            }
+            else {
+                RotateTankImageCountClock();
+            }
+        }
+    }
 }
 
-function MouseTankRotate(event) {
+/*function MouseTankRotate(event) {
     position = $('hidden_mouse_position').getAttribute('value');
     if (position >= 0) {
-        var y = event.clientY;
         var x = event.clientX;
 
-       /* if (abs(position - x) > globalX) {
+        if (Math.abs(position - x) > globalX) {
             if (x > position) {
                 RotateTankImageClock();
             } else {
                 RotateTankImageCountClock();
             }
         }
-       */
 
         if (x > position) {
             RotateTankImageClock();
@@ -34,7 +46,7 @@ function MouseTankRotate(event) {
             RotateTankImageCountClock();
         }
     }
-}
+}*/
 function MouseTurretRotate(event) {
     position = $('hidden_mouse_position').getAttribute('value');
     if (position >= 0) {
@@ -49,17 +61,19 @@ function MouseTurretRotate(event) {
     }
 }
 function SetInitPosition(event){
-    $('hidden_mouse_position').setAttribute('value', event.clientY);
+    $('hidden_mouse_positionX').setAttribute('value', event.clientX);
+    $('hidden_mouse_positionY').setAttribute('value', event.clientY);
 }
-function SetInitPositionX(event){
+/*function SetInitPositionX(event){
     $('hidden_mouse_position').setAttribute('value', event.clientX);
-}
+}*/
 
 function RevertTank(){
     $('tank_body').setStyle({
         bottom: '50px'
     });
-    $('hidden_mouse_position').setAttribute('value', -1);
+    $('hidden_mouse_positionX').setAttribute('value', -1);
+    $('hidden_mouse_positionY').setAttribute('value', -1);
     $('turret').style.MozTransform = 'rotate(0deg)';
     $('turret').style.webkitTransform = 'rotate(360deg)';
 
