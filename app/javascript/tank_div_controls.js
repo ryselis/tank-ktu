@@ -9,8 +9,10 @@ function MouseTankMove(event) {
 		if (Math.abs(positionY - y) > yOff) {
             if (y < positionY) {
                 MoveTankImageUp();
+                tankMove('forward', true);
             } else {
                 MoveTankImageDown();
+                tankMove('back', true);
             }
 		}
 	}
@@ -19,34 +21,16 @@ function MouseTankMove(event) {
         if (Math.abs(positionX - x) > xOff) {
             if (x > positionX) {
                 RotateTankImageClock();
+                tankMove('right', true);
             }
             else {
                 RotateTankImageCountClock();
+                tankMove('left', true);
             }
         }
     }
 }
 
-/*function MouseTankRotate(event) {
-    position = $('hidden_mouse_position').getAttribute('value');
-    if (position >= 0) {
-        var x = event.clientX;
-
-        if (Math.abs(position - x) > globalX) {
-            if (x > position) {
-                RotateTankImageClock();
-            } else {
-                RotateTankImageCountClock();
-            }
-        }
-
-        if (x > position) {
-            RotateTankImageClock();
-        }  else {
-            RotateTankImageCountClock();
-        }
-    }
-}*/
 function MouseTurretRotate(event) {
     position = $('hidden_mouse_position').getAttribute('value');
     if (position >= 0) {
@@ -64,9 +48,6 @@ function SetInitPosition(event){
     $('hidden_mouse_positionX').setAttribute('value', event.clientX);
     $('hidden_mouse_positionY').setAttribute('value', event.clientY);
 }
-/*function SetInitPositionX(event){
-    $('hidden_mouse_position').setAttribute('value', event.clientX);
-}*/
 
 function RevertTank(){
     $('tank_body').setStyle({
@@ -89,13 +70,16 @@ function RevertTurret() {
 function RevertTankRotate() {
     $('tank_body').style.MozTransform = 'rotate(0deg)';
     $('tank_body').style.webkitTransform = 'rotate(360deg)';
+    $('hidden_mouse_positionX').setAttribute('value', -1);
+    tankMove('left', false);
 }
 
 function RevertTankMove(){
     $('tank_body').setStyle({
         bottom: '50px'
     });
-    $('hidden_mouse_position').setAttribute('value', -1);
+    $('hidden_mouse_positionY').setAttribute('value', -1);
+    tankMove('forward', false);
 }
 
 
