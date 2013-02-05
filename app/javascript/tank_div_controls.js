@@ -174,8 +174,6 @@ function tankShoot(gun) {
 
 
 function tankMove(move, state) {
-	console.log(move, prevEvent);
-	console.log(state, prevState);
 	if (!(move == prevEvent && state == prevState)) {
 		if (state) {
 			switch(move) {
