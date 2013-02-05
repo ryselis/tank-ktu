@@ -245,7 +245,7 @@ function tankMove(move, state) {
 
 
 function turretMove(side, state){
-	if (prevEventTurret != side && prevStateTurret != state) {
+	if (!(prevEventTurret == side && prevStateTurret == state)) {
 	    var stateT;
 	    if (state) {
 	        stateT = "/on";
