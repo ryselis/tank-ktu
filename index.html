@@ -201,10 +201,11 @@
 <body onload="init();resizeCamera();" onunload="closeStream();" onResize="resizeCamera();">
 <a id="fake_link" href="" onclick="return false"></a>
 <div id="camera_container">
-    <video>rtsp://192.168.42.1/AmbaStreamTest</video>
+
 </div>
 <div id="camera_container2" ontouchmove="event.preventDefault();" style="background-size: 100% 100%;">
-	<div id="slider">
+
+        <div id="slider">
 		<div id="pedal" ontouchstart="event.preventDefault(); setPedalPosition(1);" ontouchend="setPedalPosition(0);" onmousedown='setPedalPosition(1);' onmouseup='setPedalPosition(0);'></div>
 		<div id="slider-bar">
 			<div id="slider-handle"><p id="percent"></p></div> 
