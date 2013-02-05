@@ -78,8 +78,8 @@ function CaptureON(button, cond){ 		 //cond = 0 - ispaudziamas mygtukas, cond = 
 							parameters: {getOption: 'savePicture', Picture: src},
 							onSuccess: function(transport) {
 								var response = transport.responseText || "no response text";
-								$("fotoimage").setStyle({display: 'block'});
-								$("fotoimage").setAttribute('src',src);
+								//$("fotoimage").setStyle({display: 'block'});
+								//$("fotoimage").setAttribute('src',src);
 								hideImage.delay(5);
 								savingFoto = false;
 							},

@@ -10,7 +10,7 @@
 				parameters: {getOption: 'savePicture', Picture: src},
 				onSuccess: function(transport) {
 					var response = transport.responseText || "no response text";
-					$("fotoimage").setAttribute('src',src);
+					//$("fotoimage").setAttribute('src',src);
 				},
 				onFailure: function() { alert('Something went wrong...'); }
 			});

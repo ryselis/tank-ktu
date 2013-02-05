@@ -96,6 +96,7 @@ function RevertTankRotate() {
     $('tank_body').style.MozTransform = 'rotate(0deg)';
     $('tank_body').style.webkitTransform = 'rotate(360deg)';
     $('hidden_mouse_positionX').setAttribute('value', -1);
+    
    //tankMove('left', false);
 }
 
@@ -154,8 +155,8 @@ function request(req) {
         method: 'get',
         onSuccess: function(transport) {
             var response = transport.responseText || "no response text";
-            $("fotoimage").setStyle({display: 'block'});
-            $("fotoimage").setAttribute('src',src);
+            //$("fotoimage").setStyle({display: 'block'});
+            //$("fotoimage").setAttribute('src',src);
             hideImage.delay(5);
             savingFoto = false;
         },
@@ -171,69 +172,79 @@ function tankShoot(gun) {
 }
 
 
-function tankMove(move, state){
-	if (move != prevEvent && state != prevState){
-	    if (state) {
-	        switch(move){
-	            case 'left':
-	                request('rotate/100');
-	                RotateTankImageCountClock();
-	                break;
-	            case 'right':
-	                request('rotate/160');
-	                RotateTankImageClock();
-	                break;
-	            case 'left_fast':
-	                request('rotate/0');
-	                RotateTankImageCountClock();
-	                break;
-	            case 'right_fast':
-	                request('rotate/255');
-	                RotateTankImageClock();
-	                break;
-	            case 'forward':
-	                request('move/94');
-	                MoveTankImageUp();
-	                break;
-	            case 'forward_fast':
-	                request('move/0');
-	                MoveTankImageUp();
-	                break;
-	            case 'back':
-	                request('move/160');
-	                MoveTankImageDown();
-	                break;
-	            case 'back_fast':
-	                request('move/255');
-	                MoveTankImageDown();
-	                break;
-	    }
-	    }
-	    // tank movement turn off
-	    else {
-	        switch(move){
-	            case 'left':
-	                request('rotate/127');
-	                RevertTankRotate();
-	                break;
-	            case 'right':
-	                request('rotate/127');
-	                RevertTankRotate();
-	                break;
-	            case 'forward':
-	                request('move/127');
-	                RevertTankMove();
-	                break;
-	            case 'back':
-	                request('move/127');
-	                RevertTankMove();
-	                break;
-	        }
-	    }
-    prevEvent = move;
-    prevState = state;
-   }
+
+function tankMove(move, state) {
+	console.log(move, prevEvent);
+	console.log(state, prevState);
+	if (!(move == prevEvent && state == prevState)) {
+		if (state) {
+			switch(move) {
+				case 'left':
+					request('rotate/100');
+					RotateTankImageCountClock();
+					break;
+				case 'right':
+					request('rotate/160');
+					RotateTankImageClock();
+					break;
+				case 'left_fast':
+					request('rotate/0');
+					RotateTankImageCountClock();
+					break;
+				case 'right_fast':
+					request('rotate/255');
+					RotateTankImageClock();
+					break;
+				case 'forward':
+					request('move/94');
+					MoveTankImageUp();
+					break;
+				case 'forward_fast':
+					request('move/0');
+					MoveTankImageUp();
+					break;
+				case 'back':
+					request('move/160');
+					MoveTankImageDown();
+					break;
+				case 'back_fast':
+					request('move/255');
+					MoveTankImageDown();
+					break;
+			}
+		}
+		// tank movement turn off
+
+		else {
+			console.log(move);
+			switch(move) {
+				case 'left':
+					request('rotate/127');
+					
+					RevertTankRotate();
+					break;
+				case 'right':
+					request('rotate/127');
+					
+					RevertTankRotate();
+					break;
+				case 'forward':
+					request('move/127');
+					
+					RevertTankMove();
+					break;
+				case 'back':
+					request('move/127');
+					
+					RevertTankMove();
+					break;
+			}
+		}
+		prevEvent = move;
+		prevState = state;
+	}
 }
+
 
 function turretMove(side, state){
 	if (prevEventTurret != side && prevStateTurret != state) {

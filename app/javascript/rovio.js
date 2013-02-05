@@ -1345,8 +1345,8 @@ function startMoving(move_id,speed){
                             method: 'get',
                             onSuccess: function(transport) {
                                var response = transport.responseText || "no response text";
-                                $("fotoimage").setStyle({display: 'block'});
-                                $("fotoimage").setAttribute('src',src);
+                                //$("fotoimage").setStyle({display: 'block'});
+                                //$("fotoimage").setAttribute('src',src);
                                 hideImage.delay(5);
                                 savingFoto = false;
                             },

@@ -7,7 +7,6 @@ $(document).observe('keydown', function (e) {
             setPedalPosition(1);
             break;
     }
-
     switch (e.keyCode) {
         case Event.KEY_LEFT:
             if (shiftDown)
@@ -76,7 +75,6 @@ $(document).observe('keydown', function (e) {
 });
 
 $(document).observe('keyup', function(e){
-
     switch (e.keyCode) {
         case Event.KEY_LEFT:
             tankMove('left', false);
